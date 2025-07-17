@@ -9,6 +9,7 @@ const app = express();
 const PORT = ENV_VARS.PORT;
 app.use(express.json());
 app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/movie", authRoutes);
 app.listen(PORT, () => {
   console.log("server started at http://localhost:" + PORT);
   connectDB();
