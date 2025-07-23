@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/Home/HomePage";
 import LoginPage from "./pages/LoginPage";
-import SignUpPage from "./pages/SignUpPage";
+import SignUpPage from "./pages/SignupPage";
 //import WatchPage from "./pages/WatchPage";
 import Footer from "./components/Footer";
 import { Toaster } from "react-hot-toast";
@@ -16,6 +16,7 @@ function App() {
   const { user, isCheckingAuth, authCheck } = useAuthStore();
 
   useEffect(() => {
+    console.log("Running authCheck");
     authCheck();
   }, [authCheck]);
 

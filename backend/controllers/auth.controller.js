@@ -19,10 +19,12 @@ export async function signup(req, res) {
     }
 
     if (password.length < 6) {
-      return res.status(400).json({
-        success: false,
-        message: "Password must be at least 6 characters",
-      });
+      return res
+        .status(400)
+        .json({
+          success: false,
+          message: "Password must be at least 6 characters",
+        });
     }
 
     const existingUserByEmail = await User.findOne({ email: email });
@@ -120,10 +122,13 @@ export async function logout(req, res) {
     res.status(500).json({ success: false, message: "Internal server error" });
   }
 }
+
 export async function authCheck(req, res) {
   try {
-    res.status(200).json({ success: true, user: req.User });
+    console.log("req.user:", req.user);
+    res.status(200).json({ success: true, user: req.user });
   } catch (error) {
-    res.status(400).json({ success: false, message: "Internal server error" });
+    console.log("Error in authCheck controller", error.message);
+    res.status(500).json({ success: false, message: "Internal server error" });
   }
 }
