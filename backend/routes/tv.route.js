@@ -3,7 +3,7 @@ import express from "express";
 import {
   getSimilarTvs,
   getTrendingTv,
-  getTvbycategory,
+  getTvsByCategory,
   getTvDetails,
   getTvTrailers,
 } from "../controllers/tv.controller.js";
@@ -12,5 +12,5 @@ router.get("/trending", getTrendingTv);
 router.get("/:id/trailer", getTvTrailers);
 router.get("/:id/details", getTvDetails);
 router.get("/:id/similar", getSimilarTvs);
-router.get("/:category", getTvbycategory);
+router.get("/:category", getTvsByCategory);
 export default router;
