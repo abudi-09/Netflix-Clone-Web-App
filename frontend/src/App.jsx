@@ -8,7 +8,7 @@ import { Toaster } from "react-hot-toast";
 import { useAuthStore } from "./store/authUser";
 import { useEffect } from "react";
 import { Loader } from "lucide-react";
-//import SearchPage from "./pages/SearchPage";
+import SearchPage from "./pages/SearchPage";
 //import SearchHistoryPage from "./pages/SearchHistoryPage";
 //import NotFoundPage from "./pages/404";
 
@@ -45,6 +45,10 @@ function App() {
         <Route
           path="/watch/:id"
           element={user ? <WatchPage /> : <Navigate to={"/login"} />}
+        />
+        <Route
+          path="/search"
+          element={user ? <SearchPage /> : <Navigate to={"/login"} />}
         />
       </Routes>
       <Footer />
