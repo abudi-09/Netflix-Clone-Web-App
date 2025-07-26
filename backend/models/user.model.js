@@ -20,10 +20,15 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: "",
   },
-  searchhistory: {
-    type: Array,
-    default: [],
-  },
+  searchHistory: [
+    {
+      id: { type: Number, required: true },
+      image: { type: String, required: true },
+      title: { type: String, required: true },
+      searchType: { type: String, required: true }, // "movie" or "tv"
+      createdAt: { type: Date, default: Date.now },
+    },
+  ],
 });
 
 export const User = mongoose.model("User", userSchema);

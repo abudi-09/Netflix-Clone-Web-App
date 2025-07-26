@@ -90,7 +90,6 @@ export async function searchTv(req, res) {
     res.status(500).json({ success: false, message: "Internal Server Error" });
   }
 }
-
 export async function getSearchHistory(req, res) {
   try {
     res.status(200).json({ success: true, content: req.user.searchHistory });
@@ -98,7 +97,6 @@ export async function getSearchHistory(req, res) {
     res.status(500).json({ success: false, message: "Internal Server Error" });
   }
 }
-
 export async function removeItemFromSearchHistory(req, res) {
   let { id } = req.params;
 
